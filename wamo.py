@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # predictor
 import pandas_datareader.data as web
 from datetime import datetime
@@ -7,7 +6,7 @@ start = datetime(2019, 4, 18)
 end = datetime(2019, 4, 18)
 f = web.DataReader('FIT', 'iex', start, end)
 f.to_csv(index=False, path_or_buf='training_data.csv')
-=======
+
 # predictor
 import pandas_datareader.data as web
 from datetime import datetime
@@ -27,7 +26,7 @@ for year in year_array:
             try:
                 start = datetime(year, month, day)
                 end = datetime(year, month, day)
-                day_data = web.DataReader('COF', 'iex', start, end)
+                day_data = web.DataReader('FIT', 'iex', start, end)
                 month_data.add(day_data)
             except:
                 print("no data to write")
@@ -36,4 +35,3 @@ for year in year_array:
 
 if f is not None:
     f.to_csv(index=False, path_or_buf='training_data.csv')
->>>>>>> 0f0085d2aa9a3ff6ce0ef4a31d3fa7676ea2d3e8
